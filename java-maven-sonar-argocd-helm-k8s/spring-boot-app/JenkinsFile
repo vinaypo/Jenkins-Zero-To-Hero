@@ -1,9 +1,8 @@
 pipeline {
-  agent {
-    tools {
+  agent any
+  tools {
       jdk 'OpenJDK'
       maven 'maven'
-    }
   }
   stages {
     stage('Checkout') {
