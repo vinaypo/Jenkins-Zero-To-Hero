@@ -15,9 +15,9 @@ pipeline {
       steps {
         sh 'ls -ltr'
         // build the project and create a JAR file
-        export JAVA_HOME=/opt/java/jdk-17.0.5+8
-        export PATH=$JAVA_HOME/bin:$PATH
-        echo "JAVA_HOME=$JAVA_HOME"
+        sh 'export JAVA_HOME=/opt/java/jdk-17.0.5+8'
+        sh 'export PATH=$JAVA_HOME/bin:$PATH'
+        sh 'echo "JAVA_HOME=$JAVA_HOME"'
         sh 'cd java-maven-sonar-argocd-helm-k8s/spring-boot-app && mvn clean package'
       }
     }
