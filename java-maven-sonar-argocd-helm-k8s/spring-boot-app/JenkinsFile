@@ -19,6 +19,8 @@ pipeline {
             java -version
             mvn -version
             cd java-maven-sonar-argocd-helm-k8s/spring-boot-app
+            echo "Manually cleaning target/"
+            rm -rf target || true
             mvn clean package
           '''
       }
